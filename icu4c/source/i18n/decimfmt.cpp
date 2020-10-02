@@ -510,6 +510,11 @@ UBool DecimalFormat::operator==(const Format& other) const {
     return fields->properties == otherDF->fields->properties && *fields->symbols == *otherDF->fields->symbols;
 }
 
+
+UBool DecimalFormat::operator!=(const Format& other) const {
+    return !operator==(other);
+}
+
 UnicodeString& DecimalFormat::format(double number, UnicodeString& appendTo, FieldPosition& pos) const {
     if (fields == nullptr) {
         appendTo.setToBogus();

@@ -910,6 +910,7 @@ class U_I18N_API DecimalFormat : public NumberFormat {
      * @stable ICU 2.0
      */
     UBool operator==(const Format& other) const U_OVERRIDE;
+    UBool operator!=(const Format& other) const;
 
 
     using NumberFormat::format;

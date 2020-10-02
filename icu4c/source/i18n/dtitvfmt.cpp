@@ -262,6 +262,10 @@ DateIntervalFormat::operator==(const Format& other) const {
     return TRUE;
 }
 
+UBool
+DateIntervalFormat::operator!=(const Format& other) const {
+    return !operator==(other);
+}
 
 UnicodeString&
 DateIntervalFormat::format(const Formattable& obj,

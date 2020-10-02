@@ -120,6 +120,7 @@ public:
    * @stable ICU 2.0
    */
   virtual UBool          operator==(const ForwardCharacterIterator& that) const;
+  virtual UBool          operator!=(const ForwardCharacterIterator& that) const;
 
   /**
    * Generates a hash code for this iterator.

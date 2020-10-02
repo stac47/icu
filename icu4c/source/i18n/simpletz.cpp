@@ -240,6 +240,12 @@ SimpleTimeZone::operator==(const TimeZone& that) const
             hasSameRules(that)));
 }
 
+UBool
+SimpleTimeZone::operator!=(const TimeZone& that) const
+{
+    return !operator==(that);
+}
+
 // -------------------------------------
 
 // Called by TimeZone::createDefault() inside a Mutex - be careful.

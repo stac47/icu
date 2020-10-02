@@ -224,6 +224,7 @@ public:
      * @stable ICU 2.0
      */
     virtual UBool operator==(const Collator& other) const;
+    virtual UBool operator!=(const Collator& other) const;
 
     /**
      * Makes a copy of this object.

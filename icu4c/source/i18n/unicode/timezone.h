@@ -469,7 +469,7 @@ public:
      *              otherwise.
      * @stable ICU 2.0
      */
-    UBool operator!=(const TimeZone& that) const {return !operator==(that);}
+    virtual UBool operator!=(const TimeZone& that) const {return !operator==(that);}
 
     /**
      * Returns the TimeZone's adjusted GMT offset (i.e., the number of milliseconds to add

@@ -650,6 +650,12 @@ SimpleDateFormat::operator==(const Format& other) const
     return FALSE;
 }
 
+UBool
+SimpleDateFormat::operator!=(const Format& other) const
+{
+    return !operator==(other);
+}
+
 //----------------------------------------------------------------------
 static const UChar* timeSkeletons[4] = {
     u"jmmsszzzz",   // kFull
