@@ -57,6 +57,10 @@ public:
         return TRUE;
     }
 
+    virtual UBool operator!=(const ForwardCharacterIterator& /*that*/) const{
+        return FALSE;
+    }
+
     virtual SCharacterIterator* clone(void) const {
         return NULL;
     }
@@ -217,7 +221,7 @@ void CharIterTest::TestConstructionAndEquality() {
 
     if (*test1 == *test2 || *test1 == *test3 || *test1 == *test4)
         errln("Construction or operator== failed: Unequal objects compared equal");
-    if (*test1 != *test5)
+    if (test1->operator!=(*test5))
         errln("clone() or equals() failed: Two clones tested unequal");
 
     if (test1->hashCode() == test2->hashCode() || test1->hashCode() == test3->hashCode()
@@ -238,11 +242,11 @@ void CharIterTest::TestConstructionAndEquality() {
 
 
     test1->setIndex(5);
-    if (*test1 != *test2 || *test1 == *test5)
+    if (test1->operator!=(*test2) || test1->operator==(*test5))
         errln("setIndex() failed");
 
     *((StringCharacterIterator*)test1) = *((StringCharacterIterator*)test3);
-    if (*test1 != *test3 || *test1 == *test5)
+    if (test1->operator!=(*test3) || *test1 == *test5)
         errln("operator= failed");
 
     delete test2;
@@ -1086,6 +1090,10 @@ public:
         return
             this==&that ||
             (typeid(*this)==typeid(that) && pos==((SubCharIter &)that).pos);
+    }
+
+    virtual UBool operator!=(const ForwardCharacterIterator &that) const {
+        return !operator==(that);
     }
 
     virtual int32_t hashCode() const {

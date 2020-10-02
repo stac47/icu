@@ -191,6 +191,12 @@ DateFormat::operator==(const Format& other) const
          (fCapitalizationContext == fmt->fCapitalizationContext) );
 }
 
+UBool
+DateFormat::operator!=(const Format& other) const
+{
+    return !operator==(other);
+}
+
 //----------------------------------------------------------------------
 
 UnicodeString&

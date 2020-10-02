@@ -262,6 +262,7 @@ public:
      * @deprecated ICU 49 Use MessageFormat instead, with plural and select arguments.
      */
     virtual UBool operator==(const Format& other) const;
+    virtual UBool operator!=(const Format& other) const;
 
     /**
      * Sets the pattern.

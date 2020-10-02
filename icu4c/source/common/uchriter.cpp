@@ -67,6 +67,11 @@ UCharCharacterIterator::~UCharCharacterIterator() {
 }
 
 UBool
+UCharCharacterIterator::operator!=(const ForwardCharacterIterator& that) const {
+    return !operator==(that);
+}
+
+UBool
 UCharCharacterIterator::operator==(const ForwardCharacterIterator& that) const {
     if (this == &that) {
         return TRUE;

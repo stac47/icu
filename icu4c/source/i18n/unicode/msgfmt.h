@@ -430,6 +430,7 @@ public:
      * @stable ICU 2.0
      */
     virtual UBool operator==(const Format& other) const;
+    virtual UBool operator!=(const Format& other) const;
 
     /**
      * Sets the locale to be used for creating argument Format objects.

@@ -238,7 +238,7 @@ if (fr != NULL && it != NULL && de != NULL)
     NumberFormat *newNf = nf->clone();
     de->adoptNumberFormat(newNf);   
     it->setNumberFormat(*newNf);
-    if( *(de->getNumberFormat()) != *(it->getNumberFormat())) {
+    if(*it->getNumberFormat() != *de->getNumberFormat()) {
         errln("ERROR: adopt or set NumberFormat() failed");
     }
 

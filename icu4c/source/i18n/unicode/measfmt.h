@@ -148,6 +148,7 @@ class U_I18N_API MeasureFormat : public Format {
      * @stable ICU 53
      */
     virtual UBool operator==(const Format &other) const;
+    virtual UBool operator!=(const Format &other) const;
 
     /**
      * Clones this object polymorphically.

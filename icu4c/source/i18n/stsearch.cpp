@@ -218,6 +218,10 @@ UBool StringSearch::operator==(const SearchIterator &that) const
     return FALSE;
 }
 
+UBool StringSearch::operator!=(const SearchIterator &that) const
+{
+    return !operator==(that);
+}
 // public get and set methods ----------------------------------------
 
 void StringSearch::setOffset(int32_t position, UErrorCode &status)

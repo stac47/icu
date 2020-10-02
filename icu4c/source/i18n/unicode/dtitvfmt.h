@@ -451,7 +451,7 @@ public:
      * @return      true if the given Format objects are not semantically equal.
      * @stable ICU 4.0
      */
-    UBool operator!=(const Format& other) const;
+    virtual UBool operator!=(const Format& other) const;
 
 
     using Format::format;
@@ -1138,11 +1138,6 @@ private:
     UnicodeString* fTimePattern;
     UnicodeString* fDateTimeFormat;
 };
-
-inline UBool
-DateIntervalFormat::operator!=(const Format& other) const  {
-    return !operator==(other);
-}
 
 U_NAMESPACE_END
 
